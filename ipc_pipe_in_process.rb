@@ -13,5 +13,7 @@ writer.close
 puts reader.read
 
 begin
-  reader.write "doesn't work"
+  reader.write "HI"
+rescue IOError => e
+  puts "Reader #{e.message}"
 end

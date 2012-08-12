@@ -1,7 +1,4 @@
-
-
 reader, writer = IO.pipe
-
 
 fork do
   reader.close # child process doesn't need this
