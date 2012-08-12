@@ -1,4 +1,4 @@
-# Pipes are like anonymous Files
+# Pipes are unidirectional: one way
 
 reader, writer = IO.pipe
 
