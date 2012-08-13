@@ -49,7 +49,7 @@ puts `ps #{Process.pid}`
 #
 # Processes have exit codes
 #
-system('exit 12')
+system('exit', '12')
 puts "Exit status: #{$?.exitstatus}"
 
 # one may use exit, exit!, abort, abort!, raise to end process
@@ -57,10 +57,10 @@ puts "Exit status: #{$?.exitstatus}"
 #
 # Processes Have resource Limits
 #
-puts "Limits: #{l = Process.getrlimit(:NOFILE)}"
+puts "Limits: #{Process.getrlimit(Process::RLIMIT_NOFILE).inspect}"
 
 # Processes can have limits set with:
-Process.setrlimit(:NOFILE, 3)
+Process.setrlimit(Process::RLIMIT_NOFILE, 3)
 
 # violating limits will raise errors
 begin 
