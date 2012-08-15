@@ -2,8 +2,8 @@
 # Orphaned Processes
 #
 
-
-# Orphaned Process - a child process with original parent process dead
+#
+# An orphan process is a computer process whose parent process has finished or terminated. 
 # gets assgned a Init Process(PID=1) as a parent
 
 fork do

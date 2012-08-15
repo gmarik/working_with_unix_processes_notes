@@ -9,7 +9,7 @@ child_pid = fork do
 end
 
 puts "Child has been detached: not a zombie"
-Process.detach(child_pid)
+Process.detach(child_pid) # creates a thread `wait`-inf for child to end
 
 puts 'Done'
 
