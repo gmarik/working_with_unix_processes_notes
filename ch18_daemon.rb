@@ -1,3 +1,7 @@
+#
+# Processes can be daemons
+#
+
 # ruby  1.9+ implements Process.daemon like this
 # https://github.com/ruby/ruby/blob/c852d76f46a68e28200f0c3f68c8c67879e79c86/process.c#L4817-4860
 # which is equivalent to
@@ -32,6 +36,8 @@ def daemonize!
   STDERR.reopen '/dev/null', 'a'
 end
 
+# Ruby 1.9 implements Process.daemon
+# use custom one here just for learning sake
 daemonize!
 
 #store PID to make sure process starts without error
