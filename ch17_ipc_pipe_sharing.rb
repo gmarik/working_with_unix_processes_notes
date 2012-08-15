@@ -1,7 +1,12 @@
+#
+# Processes Can Communicate
+#
+
+# when forked resources/file descriptors are shared/copied
+
 reader, writer = IO.pipe
 
 fork do
-  # fork copies reader, writer to child process
   reader.close # close child's copy
 
   10.times do

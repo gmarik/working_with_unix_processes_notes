@@ -1,3 +1,7 @@
+#
+# Processes Can Communicate
+#
+
 # Pipe is like anonymous File
 # has similar interface, with some exceptions
 # doesn't have #path, #name, etc (as it's anonymous)
@@ -23,5 +27,11 @@ rescue IOError => e
   puts e.message
 end
 
+writer.write "Hello"
+writer.write " "
+writer.write "World"
 
+# writer.close is necessary so reader to not block forever waiting for EOF
+writer.close
 
+puts reader.read
