@@ -1,10 +1,16 @@
+#
+# Process can communicate
+#
+
 # Socket unlike Pipe is 
 # - bidirectional
-# - messaging paradigm
+# - messaging paradigm (not stream)
 #
+
 require 'socket'
 
 child_sock, parent_sock = Socket.pair(:UNIX, :DGRAM, 0)
+
 MAXLEN = 1000
 
 fork do
