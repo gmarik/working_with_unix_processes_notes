@@ -1,11 +1,8 @@
 require 'socket'
 
-# unix server socket is a Socket that accepts
-# client connections
-# differences betwee UNIXServer is that the
-# latter is not a socket
-# TODO: elaborate on said above
-
+# unix_server_socket is a shortcut
+# for creating a listening unix socket
+#
 # server socket
 s_ssock = Socket.unix_server_socket("/tmp/sock")
 # client connection
